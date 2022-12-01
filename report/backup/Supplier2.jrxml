@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Supplier" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="973b2634-17c4-41f9-99b6-7332885244de">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="logo" class="java.lang.String"/>
+	<parameter name="idSupplier" class="java.lang.Long"/>
+	<parameter name="pathReport" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from supplier where id = $P{idSupplier}]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.label" value="alamat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="hp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="hp"/>
+		<property name="com.jaspersoft.studio.field.label" value="hp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nama"/>
+		<property name="com.jaspersoft.studio.field.label" value="nama"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="created_date" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="created_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="created_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="deleted_date" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="deleted_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="deleted_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<field name="updated_date" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="updated_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="updated_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="supplier"/>
+	</field>
+	<columnHeader>
+		<band height="199" splitType="Stretch">
+			<image>
+				<reportElement x="20" y="0" width="90" height="50" uuid="dee7e0dc-c14a-4d9c-aa82-15d8f42c5670"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="180" y="13" width="259" height="28" uuid="8271b296-1234-4bba-a825-ba3270b3cd42"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reporting Supplier Data Barang]]></text>
+			</staticText>
+			<line>
+				<reportElement x="20" y="50" width="532" height="1" uuid="169998a4-f399-4d83-b208-370e2ffa5911"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="20" y="70" width="511" height="20" uuid="ce17e0f5-2c74-4635-992a-dc9c004793fd"/>
+				<textFieldExpression><![CDATA["Pada hari ini, " + new SimpleDateFormat("dd/MM/yy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="89" width="111" height="20" uuid="a09fec40-5b29-41aa-9066-e5e5cc5870ec"/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="90" width="400" height="20" uuid="a674a177-6a48-44e0-acc9-9c4271a9cceb"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+ $F{nama}==null?"": $F{nama}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="109" width="111" height="20" uuid="47a67a62-56d7-4bfb-a576-2b24b94a991a"/>
+				<text><![CDATA[Hp]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="110" width="400" height="20" uuid="25d70eb8-3b38-4ddf-9294-ea63c35c8112"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$F{hp}==null?"": $F{hp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="130" width="111" height="20" uuid="89f0e400-de62-452d-95f8-ead1285ea29c"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="131" width="400" height="20" uuid="2f42fe1e-acff-4e38-926a-afd90bcf1e07"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+ $F{alamat}==null?"": $F{alamat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="160" width="111" height="20" uuid="75aa1f27-6f18-404d-9e8b-37edf708a47e"/>
+				<text><![CDATA[Detail Barang:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="53">
+			<subreport>
+				<reportElement x="50" y="17" width="200" height="22" uuid="7e187b29-5312-4522-ac15-08dabedefe94"/>
+				<subreportParameter name="idSupplier">
+					<subreportParameterExpression><![CDATA[$P{idSupplier}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{pathReport}+"baranglist.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

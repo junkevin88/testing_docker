@@ -1,0 +1,33 @@
+version: '3.6'
+networks:
+  grab: {}
+
+services:
+  spring:
+    image: maven:3-jdk-8
+    ports:
+      - 8090:8082
+    # restart: unless-stopped
+    working_dir: /opt/app
+    volumes:
+      - .:/opt/app
+#      - ./cache/maven:/var/maven/.m2
+#      - ./cache/cdn:${CDN_PATH:-/opt/app/cache/cdn}
+    #user: ${UID:-1000}:${GROUPS:-1000}
+    environment:
+      - TZ=Asia/Jakarta
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ec2-18-210-191-5.compute-1.amazonaws.com:5432/dvch7rlkgrl4i
+      - SPRING_DATASOURCE_USERNAME=ydtyecrssfbazz
+      - SPRING_DATASOURCE_PASSWORD=efe7049a7247bef02e99208410c2f2ad038e2a29e1b94c295d2af0aaca7d8a40
+      - SPRING_PROFILES_CDN_PATHACTIVE=${APP_ENV:-dev}
+      - SECURITY_JWT_ENABLED=true
+      - SERVER_SERVLET_CONTEXT_PATH=/api
+      - MAVEN_CONFIG=/var/maven/.m2
+      - FILE_UPLOADDIR=${CDN_PATH:-/opt/app/cache/cdn/}
+      - FILE_SHOW_URL=${CDN_BASE_URL:-http://172.20.2.153:8090/cdn/}
+      - APP_UPLOADTO_CDN=${CDN_PATH:-/opt/app/cache/cdn/}
+    networks:
+      grab:
+        aliases:
+          - oauth2.api
+    command: [ "mvn", "-Duser.home=/var/maven", "spring-boot:run" ]

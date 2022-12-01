@@ -1,0 +1,23 @@
+https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
+
+desing patter
+1. creation -> singleton, factory, pool
+2. Structural pattern :
+3. behavioer
+
+1. creation
+a. Singleton Pattern
+Yaitu pattern yang bisa memanggil satu object di dalam suatu aplikasi. Pokoknya inget aja kata single.
+b. Factory pattern bisa bikin berbagai macam object dari satu sumber.
+
+
+2. Structural pattern merupakan pattern yang mengatur gimana class-class berinteraksi.
+Facade pattern merupakan solusi untuk menampilkan code yang complex dan membaginya jadi beberapa bagian.
+Facade ini adalah tempat bertemunya beberapa class yang berisi business logic. Sehingga, class yang terpisah tersebut bakal bertemu di satu class.
+
+
+3.Behavioral Pattern merupakan pattern yang isinya gimana sebuah object berinteraksi dan berperilaku di dalam sebuah system.
+Strategy pattern ini agak mirip sama pattern yang kita bahas di awal. Tapi yang ditekankan di strategy pattern bukan tentang
+pembuatan objectnya, melainkan pengelompokkan algoritma yang jadi penekanannya.
+contoh :
+https://www.jetbrains.com/help/idea/replace-conditional-logic-with-strategy-pattern.html

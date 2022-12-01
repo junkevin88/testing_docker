@@ -1,0 +1,29 @@
+docker-compose up -d  : menajalankan semua yang semuar servise
+
+docker-compose up spring
+
+docker-compose images  / docker-compose ps : show all image yg aktif
+
+docker-compose down -v : mematikan semua service yang ada
+
+docker-compose ps : melihart image yang sedang aktif
+
+docker-compose stop :: mematikan semua service yang ada
+
+remote images : https://stackoverflow.com/questions/37971961/docker-error-bind-address-already-in-use
+
+pass: 12345
+
+docker-compose down  # Stop container on current dir if there is a docker-compose.yml
+docker rm -fv $(docker ps -aq)  # Remove all containers
+sudo lsof -i -P -n | grep <port number>  # List who's using the port
+and then: kill -9 <process id> (macOS) or sudo kill <process id> (Linux).
+
+docker-compose logs : melihat logs
+
+docker-compose logs -f postgres : lebih detail , melihat logs khusu container service spring
+
+// jalankan postgresdi docker secara manual
+https://towardsdatascience.com/local-development-set-up-of-postgresql-with-docker-c022632f13ea
+
+docker-compose run -d \--name dev-postgres \-e POSTGRES_PASSWORD=Pass2020! \-v ${HOME}/postgres-data/:/var/lib/postgresql/data \-p 5432:5432 binar

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Add Bootstrap to Thymeleaf</title>
+    <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class = "container">
+    <div class = "row">
+        <table class = "table table-responsive table-bordered table-striped">
+            <thead>
+            <tr>
+                <th> Employee First Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee : ${listData}">
+                <td th:text="${employee.nama}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
